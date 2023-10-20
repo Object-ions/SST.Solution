@@ -3,13 +3,55 @@ body {
   text-align: center;
 }
 
+h1, h2, h3, h4 {
+  text-transform: capitalize;
+}
+
 a {
   border-bottom: 1px solid black;
   color: black;
   text-decoration: none;
 }
 
-.index-div {
+a:hover {
+  background-color: aqua;
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.large-filed {
+  width: 300px;
+  height: 100px;
+}
+
+input[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.main-container {
+  width: 400px;
   margin: 0 auto;
 }
 
@@ -41,6 +83,7 @@ a {
 .index-div {
   display: flex;
   flex-direction: row;
+  margin: 0 auto;
 }
 
 .row-50 {

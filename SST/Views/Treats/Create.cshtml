@@ -2,9 +2,10 @@
   Layout = "_Layout";
 }
 
+@model SST.Models.Treat;
 @using SST.Models;
 
-<div>
+<div class="main-container">
   <h2>Treats</h2>
   <hr/>
   <h4>Add a new treat</h4>
@@ -12,16 +13,15 @@
   {
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name)
-    <br />
+    
     @Html.LabelFor(model => model.Allergen)
     @Html.TextBoxFor(model => model.Allergen)
-    <br />
-    @Html.LabelFor(model => model.Description)
-    @Html.TextBoxFor(model => model.Description)
     
-    @Html.LabelFor(model => model.Rate)
-    @Html.TextBoxFor(model => model.Rate)
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description, new { @class = "large-filed" })
 
-    <input type="submit" value="Add new stylist" />
+    <input type="submit" value="Add new treat" />
   }
+
+  <p>note: in order to add a tag for this treat, check out: "Manage Treats > "Edit Treat's Information"</p>
 </div>

@@ -18,13 +18,14 @@ namespace SST.Controllers
 
     public TreatsController(SSTContext db)
     {
-      _userManager = userManager;
+      // _userManager = userManager;
       _db = db;
     }
 
     public ActionResult Index()
     {
-      return View();
+      List<Treat> treats = _db.Treats.ToList();
+      return View(treats);
     }
 
     public ActionResult Create()
