@@ -28,18 +28,28 @@ namespace SST.Controllers
       return View(treats);
     }
 
+    //[Authorize]
     public ActionResult Create()
     {
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
       return View();
     }
 
+    //[Authorize]
     [HttpPost]
     public ActionResult Create(Treat treat)
     {
       _db.Treats.Add(treat);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    public ActionResult Details(int id)
+    {
+      Treat thisTreat = _db.Treats
+                                // .Include(treat => treat.Flavors)
+                                .FirstOrDefault(treat => treat.TreatId == id);
+      return View(thisTreat);
     }
   }
 }

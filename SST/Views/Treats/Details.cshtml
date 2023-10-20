@@ -1,3 +1,48 @@
 @{
   Layout = "_Layout";
 }
+
+@model SST.Models.Treat;
+@using SST.Models;
+@using System.Collections.Generic;
+@using System.Security.Claims;
+
+<div class="main-container">
+
+  <h2>Treat Details:</h2>
+  <hr/>
+  <h2>@Html.DisplayFor(model => model.Name)</h2>
+
+  <div>
+    @Html.DisplayFor(model => model.Allergen)
+  </div>
+
+  <div>
+    @Html.DisplayFor(model => model.Description)
+  </div>
+
+  <div>
+    @if(@Model.JoinEntities.Count == 0)
+    {
+      <p>Falvores: this treat has no falvores added yet.</p>
+    }
+    else
+    {
+      <p>Falvores:</p>
+      <ul>
+        @foreach(FlavorTreat flavorTreat in Model.JoinEntities)
+        {
+          // NOTE: Edit to action link
+        <li>Tag: @flavorTreat.Tag.Name</li>
+        }
+      </ul>
+    }
+      
+  </div>
+
+    <div class="btm-bar">
+      @Html.ActionLink("Edit recipe", "Edit", new { id = Model.RecipeId })
+      @Html.ActionLink("Delete this recipe", "Delete", new { id = Model.RecipeId })
+    </div>
+
+<div>
