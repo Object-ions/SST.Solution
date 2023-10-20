@@ -1,3 +1,27 @@
 @{
   Layout = "_Layout";
 }
+
+@using SST.Models;
+
+<div>
+  <h2>Treats</h2>
+  <hr/>
+  <h4>Add a new treat</h4>
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+    <br />
+    @Html.LabelFor(model => model.Allergen)
+    @Html.TextBoxFor(model => model.Allergen)
+    <br />
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
+    
+    @Html.LabelFor(model => model.Rate)
+    @Html.TextBoxFor(model => model.Rate)
+
+    <input type="submit" value="Add new stylist" />
+  }
+</div>
