@@ -1,0 +1,39 @@
+@{
+  Layout = "_Layout";
+}
+
+@using SST.Models;
+
+<div class ="index-div">
+  
+  <div class="row-50">
+    <h2>Treats</h2>
+    @if (Model["treats"].Length == 0)
+    {
+      <p>No treats have been added yet!</p>
+      @Html.ActionLink("Add a treat", "Create", "Treats")
+    }
+    <ol>
+    @foreach(Treat treat in Model["treats"])
+    {
+      <li>@Html.ActionLink(@treat.Name, "Details", "Treats", new { id = @treat.TreatId })</li>
+    }
+    </ol>
+  </div>
+  
+  <div class="row-50">
+    <h2>Flavors</h2>
+    @if (Model["flavors"].Length == 0)
+    {
+      <p>No flavors have been added yet!</p>
+      @Html.ActionLink("Add a flavor", "Create", "Flavors")
+    }
+    <ol>
+    @foreach(Flavor flavor in Model["flavors"])
+    {
+      <li>@Html.ActionLink(@flavor.Name, "Details", "Flavors", new { id = @flavor.FlavorId })</li>
+    }
+    </ol>
+  </div>
+
+</div>
