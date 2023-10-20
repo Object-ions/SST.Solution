@@ -3,7 +3,7 @@
 }
 
 @model SST.Models.Treat;
-@using SST.Models;
+@using SST.Models
 @using System.Collections.Generic;
 @using System.Security.Claims;
 
@@ -11,38 +11,33 @@
 
   <h2>Treat Details:</h2>
   <hr/>
-  <h2>@Html.DisplayFor(model => model.Name)</h2>
-
-  <div>
-    @Html.DisplayFor(model => model.Allergen)
-  </div>
-
-  <div>
-    @Html.DisplayFor(model => model.Description)
-  </div>
+  <h3>@Html.DisplayFor(model => model.Name);</h3>
+  @Html.DisplayNameFor(model => model.Allergen):
+  @Html.DisplayFor(model => model.Allergen)
+  <br>
+  <br>
+  @Html.DisplayFor(model => model.Description)
 
   <div>
     @if(@Model.JoinEntities.Count == 0)
     {
-      <p>Falvores: this treat has no falvores added yet.</p>
+      <p>Flavors: this treat has no flavors added yet.</p>
     }
     else
     {
-      <p>Falvores:</p>
-      <ul>
-        @foreach(FlavorTreat flavorTreat in Model.JoinEntities)
+      <p>Flavors:</p>
+      <ol>
+        @foreach(FlavorTreat join in Model.JoinEntities)
         {
-          // NOTE: Edit to action link
-        <li>Tag: @flavorTreat.Tag.Name</li>
+          <li>@join.Flavor.Name</li>
         }
-      </ul>
-    }
-      
+      </ol>
+    }  
   </div>
 
-    <div class="btm-bar">
-      @Html.ActionLink("Edit recipe", "Edit", new { id = Model.RecipeId })
-      @Html.ActionLink("Delete this recipe", "Delete", new { id = Model.RecipeId })
-    </div>
+  <div class="btm-bar">
+    @Html.ActionLink("Edit treat", "Edit", new { id = Model.TreatId })
+    @Html.ActionLink("Delete this treat", "Delete", new { id = Model.TreatId })
+  </div>
 
 <div>

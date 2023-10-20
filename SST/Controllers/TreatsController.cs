@@ -47,7 +47,8 @@ namespace SST.Controllers
     public ActionResult Details(int id)
     {
       Treat thisTreat = _db.Treats
-                                // .Include(treat => treat.Flavors)
+                                .Include(treat => treat.JoinEntities)
+                                .ThenInclude(join => join.Flavor)
                                 .FirstOrDefault(treat => treat.TreatId == id);
       return View(thisTreat);
     }
