@@ -34,8 +34,8 @@ namespace SST
         options.Password.RequireLowercase = false;
         options.Password.RequireNonAlphanumeric = false;
         options.Password.RequireUppercase = false;
-        options.Password.RequiredLength = 0;
-        options.Password.RequiredUniqueChars = 0;
+        options.Password.RequiredLength = 0; //6
+        options.Password.RequiredUniqueChars = 0; //1
         // ----- change before submitting ----- //
       });
 
