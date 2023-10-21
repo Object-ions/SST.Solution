@@ -1,3 +1,33 @@
 @{
   Layout = "_Layout";
 }
+
+@model SST.Models.Treat
+
+<div class="main-container">
+  
+  <h2>Edit Treat:</h2>
+  <hr/>
+
+  <h3>Edit: @Html.DisplayFor(model => model.Name)</h3>
+
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.TreatId)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Allergen)
+    @Html.EditorFor(model => model.Allergen)
+
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description, new { @class = "large-filed" })
+
+    <input type="submit" value="Save" />
+  }
+  <div class="btm-bar">
+    @Html.ActionLink("Add flavor to this treat", "AddFlavor")
+    @Html.ActionLink("Edit all flavors", "Edit", "Flavors")
+  </div>
+</div>

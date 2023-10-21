@@ -19,7 +19,7 @@ a:hover {
 
 form {
   width: 300px;
-  margin: 0 auto;
+  margin: 0;
   text-align: left;
 }
 
@@ -32,7 +32,7 @@ select {
   border-radius: 4px;
 }
 
-.large-filed {
+.large-field {
   width: 300px;
   height: 100px;
 }
@@ -88,4 +88,14 @@ input[type="submit"]:hover {
 
 .row-50 {
   width: 50%;
+}
+
+.btm-bar {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  max-width: 400px;
+  align-items: flex-start;
 }

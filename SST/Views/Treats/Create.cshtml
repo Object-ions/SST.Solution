@@ -18,10 +18,12 @@
     @Html.TextBoxFor(model => model.Allergen)
     
     @Html.LabelFor(model => model.Description)
-    @Html.TextBoxFor(model => model.Description, new { @class = "large-filed" })
+    @Html.TextBoxFor(model => model.Description, new { @class = "large-field" })
 
     <input type="submit" value="Add new treat" />
   }
-
-  <p>note: in order to add a tag for this treat, check out: "Manage Treats > "Edit Treat's Information"</p>
+  
+  <div class="btm-bar">
+    <p>note: in order to add a tag for this treat, check out: "Manage Treats > "Edit Treat's Information"</p>
+  </div>
 </div>
