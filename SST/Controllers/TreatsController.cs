@@ -111,5 +111,14 @@ namespace SST.Controllers
       }
       return RedirectToAction("Details", new { id = treat.TreatId });
     }
+
+    [HttpPost]
+    public ActionResult DeleteJoin(int joinId)
+    {
+      FlavorTreat joinEntity = _db.FlavorTreats.FirstOrDefault(joinEntity => joinEntity.FlavorTreatId == joinId);
+      _db.FlavorTreats.Remove(joinEntity);
+      _db.SaveChanges();
+      return RedirectToAction("Details", new {id = joinEntity.TreatId});
+    }
   }
 }
