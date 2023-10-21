@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SST.Models.Flavor;
+@using SST.Models
+@using System.Collections.Generic;
+@using System.Security.Claims;
+
+<div class="main-container">
+
+  <h2>Flavor Details:</h2>
+  <hr/>
+  <h3>Flavor's Name: @Html.DisplayFor(model => model.Name)</h3>
+
+  @if(@Model.JoinEntities.Count == 0)
+  {
+    <p>You can't find @Html.DisplayFor(model => model.Name) at this moment in our shop.</p>
+  }
+  else
+  {
+    <p>You can find @Html.DisplayFor(model => model.Name) in the following:</p>
+    <ol>
+      @foreach(FlavorTreat join in Model.JoinEntities)
+      {
+        <li>@join.Flavor.Name</li>
+      }
+    </ol>
+  }  
+
+  <div class="btm-bar">
+    @Html.ActionLink("Edit flavor", "Edit", new { id = Model.FlavorId })
+    @Html.ActionLink("Delete this flavor", "Delete", new { id = Model.FlavorId })
+  </div>
+
+</div>
