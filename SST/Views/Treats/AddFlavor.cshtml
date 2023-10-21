@@ -17,13 +17,13 @@
     <p> Start with @Html.ActionLink("Adding a flavor", "Create", "Flavors")</p>
   }
   else
-{
+  {
     @using (Html.BeginForm())
     {
       @Html.HiddenFor(model => model.TreatId)
 
       @Html.Label("Select a flavor")
-      @Html.DropDownList("FlavorId", (SelectList)ViewBag.FlavorId)
+      @Html.DropDownList("FlavorId")
 
       <input type="submit" value="Save" />    
     }
