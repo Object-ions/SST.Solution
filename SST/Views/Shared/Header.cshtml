@@ -5,11 +5,13 @@
   </div>
 
   <div class="account-bar">
-    <p>Welcome:</p>
+    @Html.ActionLink("Register", "Register", "Account" ) /
+    @Html.ActionLink("Login", "Login", "Account" )
+
+
     @if (User.Identity.IsAuthenticated)
     {
-      @User.Identity.Name
-        
+      <p> Welcome @User.Identity.Name ! </p>  
     }
   </div>
 </div>

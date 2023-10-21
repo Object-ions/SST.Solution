@@ -95,7 +95,7 @@ input[type="submit"]:hover {
   flex-direction: column;
   text-align: center;
   flex-wrap: nowrap;
-  margin: 0 auto;
+  margin: 15px auto;
   max-width: 400px;
   align-items: flex-start;
 }
