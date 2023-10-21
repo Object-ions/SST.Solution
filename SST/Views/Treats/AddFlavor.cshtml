@@ -23,7 +23,7 @@
       @Html.HiddenFor(model => model.TreatId)
 
       @Html.Label("Select a flavor")
-      @Html.DropDownList("FlavorId")
+      @Html.DropDownList("FlavorId", (SelectList)ViewBag.FlavorId)
 
       <input type="submit" value="Save" />    
     }
