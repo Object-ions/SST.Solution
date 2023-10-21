@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SST.Models.Flavor
+
+<div class="main-container">
+  
+  <h2>Edit flavor:</h2>
+  <hr/>
+
+  <h3>Edit: @Html.DisplayFor(model => model.Name)</h3>
+
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.FlavorId)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+
+    <input type="submit" value="Save Changes" />
+  }
+</div>

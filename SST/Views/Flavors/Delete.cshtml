@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SST.Models.Flavor;
+
+<div class="main-container">
+  
+  <h2>Delete Flavor:</h2>
+  <hr/>
+  <h3>Are you sure you want to delete this flavor?</h3>
+
+  @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete flavor" />
+  }
+  @Html.ActionLink("Back to flavor's List", "Index")
+</div>

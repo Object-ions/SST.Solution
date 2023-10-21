@@ -100,7 +100,7 @@ namespace SST.Controllers
     public ActionResult AddFlavor(Treat treat, int flavorId)
     {
       #nullable enable
-      FlavorTreat? joinEntity = _db.FlavorTreats.FirstOrDefault(join => (join.FlavorId == flavorId && join.TreatId == treat.TreatId));
+      FlavorTreat? joinEntity = _db.FlavorTreats.FirstOrDefault(join  =>(join.TreatId == treat.TreatId && join.FlavorId == flavorId));
       #nullable disable
       if (joinEntity == null && flavorId != 0)
       {
