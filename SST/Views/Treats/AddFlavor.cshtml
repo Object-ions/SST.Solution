@@ -3,6 +3,7 @@
 }
 
 @model SST.Models.Treat;
+@using SST.Models;
 
 <div class="main-container">
   <h2>Treats</h2>
@@ -10,14 +11,22 @@
 
   <p>Add a flavor to: @Html.DisplayFor(model => model.Name)</p>
 
-  @using (Html.BeginForm())
+  @if (((SelectList)ViewBag.FlavorId).Count() == 0)
   {
+    <p>No flavors have been added yet!</p>
+    <p> Start with @Html.ActionLink("Adding a flavor", "Create", "Flavors")</p>
+  }
+  else
+{
+    @using (Html.BeginForm())
+    {
       @Html.HiddenFor(model => model.TreatId)
 
       @Html.Label("Select a flavor")
-      @Html.DropDownList("FlavorId")
+      @Html.DropDownList("FlavorId", (SelectList)ViewBag.FlavorId)
 
       <input type="submit" value="Save" />    
+    }
   }
 
   <div class="btm-bar">
