@@ -12,7 +12,7 @@
 
   @if(!ViewData.ModelState.IsValid) 
   {
-    @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:") 
+    @Html.ValidationSummary("Please fix the following error(s) and try again.") 
   }
 
   @using (Html.BeginForm("Register", "Account", FormMethod.Post))
