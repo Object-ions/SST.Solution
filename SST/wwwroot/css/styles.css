@@ -75,6 +75,15 @@ ol, ul {
   font-size: 10px;
 }
 
+.header-section .home-link-header {
+  position: absolute;
+  background-color: aqua;
+  position: absolute;
+  left: 20px;
+  top: -25px;
+  font-size: 10px;
+}
+
 .nav-section {
   text-align: center;
   display: flex;

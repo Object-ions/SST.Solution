@@ -14,9 +14,11 @@ namespace SST.Controllers
   public class FlavorsController : Controller
   {
     private readonly SSTContext _db;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public FlavorsController(SSTContext db)
+    public FlavorsController(UserManager<ApplicationUser> userManager, SSTContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
 
@@ -26,14 +28,14 @@ namespace SST.Controllers
       return View(flavors);
     }
 
-    //[Authorize]
+    [Authorize]
     public ActionResult Create()
     {
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
       return View();
     }
 
-    //[Authorize]
+    [Authorize]
     [HttpPost]
     public ActionResult Create(Flavor flavor)
     {
@@ -58,12 +60,14 @@ namespace SST.Controllers
       return View(thisFlavor);
     }
 
+    [Authorize]
     public ActionResult Edit(int id)
     {
       Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
       return View(thisFlavor);
     }
 
+    [Authorize]
     [HttpPost]
     public ActionResult Edit(Flavor flavor)
     {
@@ -72,12 +76,14 @@ namespace SST.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize]
     public ActionResult Delete(int id)
     {
       Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
       return View(thisFlavor);
     }
 
+    [Authorize]
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {

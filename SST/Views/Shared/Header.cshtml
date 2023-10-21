@@ -3,23 +3,24 @@
   @if (User.Identity.IsAuthenticated)
   {
     <div>
-    <h2>@Html.ActionLink("Pierre's Sweet and Savory Treats", "Index", "Home")</h2>
-    <h3>Manager Panel</h3>
-  </div>
+      <h2>@Html.ActionLink("Pierre's Sweet and Savory Treats", "Index", "Home")</h2>
+      <h3>Manager Panel</h3>
+    </div>
 
-  <div class="account-bar">
-    <p>Hello @User.Identity.Name!</p>
-    @using (Html.BeginForm("LogOff", "Account"))
-    {
-      <input type="submit" class="btn btn-primary" value="Log out" />
-    }
-  </div>
+    <div class="account-bar">
+      <p>Hello @User.Identity.Name!</p>
+      @using (Html.BeginForm("LogOff", "Account"))
+      {
+        <input type="submit" class="btn btn-primary" value="Log out" />
+      }
+    </div>
   }
 
   else
   {
     <div>
-      <h2>@Html.ActionLink("Pierre's Sweet and Savory Treats", "Index", "Home")</h2>
+      <h2>Pierre's Sweet and Savory Treats</h2>
+      @Html.ActionLink("Home", "Index", "Home", null, new { @class ="home-link-header" })
     </div>
 
     <div class="account-bar">

@@ -1,4 +1,7 @@
-<div class="nav-section">
-  @Html.ActionLink("Manage Treats", "Index", "Treats")
-  @Html.ActionLink("Manage Flavors", "Index", "Flavors")
-</div>
+@if (User.Identity.IsAuthenticated)
+  {
+    <div class="nav-section">
+      @Html.ActionLink("Manage Treats", "Index", "Treats")
+      @Html.ActionLink("Manage Flavors", "Index", "Flavors")
+    </div>
+  }
