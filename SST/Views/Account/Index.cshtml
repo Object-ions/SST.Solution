@@ -2,9 +2,10 @@
   Layout = "_Layout";
 }
 
-<div class="header-section">
-  <h2>Authentication with Identity</h2>
+<div class="main-container">
+  <h2>Welcome to Manager Panel</h2>
   <hr />
+  <br>
   @if (User.Identity.IsAuthenticated)
   {
     <p>Hello @User.Identity.Name!</p>
@@ -15,7 +16,8 @@
   }
   else
   {
-    <p>@Html.ActionLink("Register", "Register")</p>
-    <p>@Html.ActionLink("Log in", "Login")</p>
+    @Html.ActionLink("Register", "Register")
+    <p> or </p>
+    @Html.ActionLink("Log in", "Login")
   }
 </div>
