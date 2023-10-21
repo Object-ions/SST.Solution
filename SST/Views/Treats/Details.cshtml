@@ -41,8 +41,15 @@
   </div>
 
   <div class="btm-bar">
+    @Html.ActionLink("Back to Treats", "Index")
+    @Html.ActionLink("Check out Flavors", "Index", "Flavors")
+  </div>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+  <div class="btm-bar">
     @Html.ActionLink("Edit treat", "Edit", new { id = Model.TreatId })
     @Html.ActionLink("Delete this treat", "Delete", new { id = Model.TreatId })
   </div>
-
-</div>
+}

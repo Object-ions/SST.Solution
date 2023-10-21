@@ -22,7 +22,11 @@
     </ol>
   }
 
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
   <div class="btm-bar">
     @Html.ActionLink("Add a treat", "Create")
   </div>
-</div>
+}

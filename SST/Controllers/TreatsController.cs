@@ -50,7 +50,7 @@ namespace SST.Controllers
         return RedirectToAction("Index");
       }
     }
-
+    
     public ActionResult Details(int id)
     {
       Treat thisTreat = _db.Treats
@@ -59,7 +59,7 @@ namespace SST.Controllers
                                 .FirstOrDefault(treat => treat.TreatId == id);
       return View(thisTreat);
     }
-
+    [Authorize]
     public ActionResult Edit(int id)
     {
       Treat thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);

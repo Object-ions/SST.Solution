@@ -7,7 +7,7 @@
 <div class ="index-div">
   
   <div class="row-50">
-    <h2>Treats</h2>
+    <h2>@Html.ActionLink("Treats", "Index", "Treats")</h2>
     @if (Model["treats"].Length == 0)
     {
       <p>No treats have been added yet!</p>
@@ -22,11 +22,14 @@
   </div>
   
   <div class="row-50">
-    <h2>Flavors</h2>
+    <h2>@Html.ActionLink("Flavors", "Index", "Flavors")</h2>
     @if (Model["flavors"].Length == 0)
     {
       <p>No flavors have been added yet!</p>
-      @Html.ActionLink("Add a flavor", "Create", "Flavors")
+      @if (User.Identity.IsAuthenticated)
+      {
+        @Html.ActionLink("Add a flavor", "Create", "Flavors")
+      }
     }
     <ol>
     @foreach(Flavor flavor in Model["flavors"])

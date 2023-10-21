@@ -26,11 +26,18 @@
         <li>@join.Flavor.Name</li>
       }
     </ol>
-  }  
+  }
 
+  <div class="btm-bar">
+    @Html.ActionLink("Back to Flavors", "Index")
+    @Html.ActionLink("Check out Treats", "Index", "Treats")
+  </div>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
   <div class="btm-bar">
     @Html.ActionLink("Edit flavor", "Edit", new { id = Model.FlavorId })
     @Html.ActionLink("Delete this flavor", "Delete", new { id = Model.FlavorId })
   </div>
-
-</div>
+}
