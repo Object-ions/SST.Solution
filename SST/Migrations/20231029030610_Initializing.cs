@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SST.Migrations
 {
-    public partial class AddMigrations : Migration
+    public partial class Initializing : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
