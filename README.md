@@ -96,7 +96,7 @@ Running the program:
 
 ## Known Bugs
 
-- _ When attempting to add a "Flavor" to a "Treat" in the application, the operation fails. _
+- No bugs known
 
 ## License
 
