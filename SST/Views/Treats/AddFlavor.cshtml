@@ -18,7 +18,7 @@
   }
   else
   {
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("AddFlavor", "Treats"))
     {
       @Html.HiddenFor(model => model.TreatId)
 

@@ -27,6 +27,6 @@
     <input type="submit" value="Save" />
   }
   <div class="btm-bar">
-    @Html.ActionLink("Add flavor to this treat", "AddFlavor")
+    @Html.ActionLink("Add flavor to this treat", "AddFlavor", new { id = Model.TreatId })
   </div>
 </div>
