@@ -109,8 +109,10 @@ namespace SST.Controllers
       #nullable disable
       if (joinEntity == null && flavorId != 0)
       {
-        _db.FlavorTreats.Add(new FlavorTreat() { FlavorId = flavorId, TreatId = treat.TreatId });
-        _db.SaveChanges();
+          _db.FlavorTreats.Add(new FlavorTreat() { 
+              FlavorId = flavorId, TreatId = treat.TreatId
+          });
+          _db.SaveChanges();
       }
       return RedirectToAction("Details", new { id = treat.TreatId });
     }

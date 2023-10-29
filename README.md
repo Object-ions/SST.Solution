@@ -37,7 +37,7 @@ Cloning the Repo:
 2. Change your directory to where you would want the cloned directory.
 3. Input the following command into your terminal:  
    `$ git clone https://github.com/Object-ions/SST.Solution.git`
-4. Using the terminal, navigate to the production directory: "Clinic" and create a new file called appsettings.json
+4. Using the terminal, navigate to the production directory: "SST" and create a new file called appsettings.json
 5. Within appsettings.json, put in the following code while also replacing the following values with your own values as shown below the code snippet:
 
 ```json
