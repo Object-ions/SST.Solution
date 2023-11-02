@@ -7,8 +7,8 @@
 ## Technologies Used
 
 - _C#_
-- _HtmL_
-- _css_
+- _HTML_
+- _CSS_
 - _.Net 6.0_
 - _ASP.NET Core MVC 6.0_
 - _Entity Framework Core_
@@ -54,7 +54,7 @@ Cloning the Repo:
 
 Running the program:
 
-1. Navigate to the project's production directory "Factory" using the terminal.
+1. Navigate to the project's production directory "SST" using the terminal.
 2. Run the following command to update the database:  
    `$ dotnet ef database update`
 3. Within the command line, run the command `$ dotnet watch run` to compile and execute the console application in developer mode.
