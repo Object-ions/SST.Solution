@@ -34,7 +34,7 @@
         @foreach(FlavorTreat join in Model.JoinEntities)
         {
           <div class="siblings">
-            <li>@join.Flavor.Name</li>
+            <li>@Html.ActionLink($"{@join.Flavor.Name}", "Details", "Flavors", new { id = @join.FlavorId })</li>
             @using (Html.BeginForm("DeleteJoin", "Treats"))
             {
               @Html.Hidden("joinId", join.FlavorTreatId)
