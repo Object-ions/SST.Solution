@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SST.Models.Flavor;
+@using SST.Models;
+
+<div class="main-container">
+  <h2>Flavors</h2>
+  <hr/>
+
+  <p>Add a treat to: @Html.DisplayFor(model => model.Name)</p>
+
+  @if (((SelectList)ViewBag.TreatId).Count() == 0)
+  {
+    <p>No treats have been added yet!</p>
+    <p> Start with @Html.ActionLink("Adding a treat", "Create", "Treats")</p>
+  }
+  else
+  {
+    @using (Html.BeginForm("AddTreat", "Flavors"))
+    {
+      @Html.HiddenFor(model => model.FlavorId)
+
+      @Html.Label("Select a treat")
+      @Html.DropDownList("TreatId")
+
+      <input type="submit" value="Save" />    
+    }
+  }
+
+  <div class="btm-bar">
+    @Html.ActionLink("Back to Flavors", "Index")
+  </div>
+</div>

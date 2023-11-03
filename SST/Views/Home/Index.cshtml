@@ -10,8 +10,11 @@
     <h2>@Html.ActionLink("Treats", "Index", "Treats")</h2>
     @if (Model["treats"].Length == 0)
     {
-      <p>No treats have been added yet!</p>
-      @Html.ActionLink("Add a treat", "Create", "Treats")
+      <p>No flavors have been added yet!</p>
+      @if (User.Identity.IsAuthenticated)
+      {
+        @Html.ActionLink("Add a flavor", "Create", "Flavors")
+      }
     }
     <ol>
     @foreach(Treat treat in Model["treats"])
