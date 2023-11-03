@@ -71,6 +71,10 @@ ol, ul {
   margin: 0;
 }
 
+li {
+  margin-bottom: 5px;
+}
+
 .siblings {
   display: flex;
   align-items: center;
