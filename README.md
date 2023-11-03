@@ -2,13 +2,13 @@
 
 #### By _**Moshe Atia**_
 
-#### _This web application designed for Pierre to showcase his collection of delightful treats. The application emphasizes user experience, complete with a robust authentication system and a many-to-many relationship between treats and flavors._
+#### _This web application designed for Pierre to showcase his collection of delightful treats. The application emphasizes user experience, complete with an authentication system and a many-to-many relationship between treats and flavors._
 
 ## Technologies Used
 
 - _C#_
-- _HtmL_
-- _css_
+- _HTML_
+- _CSS_
 - _.Net 6.0_
 - _ASP.NET Core MVC 6.0_
 - _Entity Framework Core_
@@ -54,10 +54,17 @@ Cloning the Repo:
 
 Running the program:
 
-1. Navigate to the project's production directory "Factory" using the terminal.
+1. Navigate to the project's production directory "SST" using the terminal.
 2. Run the following command to update the database:  
    `$ dotnet ef database update`
 3. Within the command line, run the command `$ dotnet watch run` to compile and execute the console application in developer mode.
+
+However, if update does not work, run this command in your terminal:
+
+> ```bash
+> $ dotnet ef migrations add Initial
+> $ dotnet ef database update
+> ```
 
 ## Available Routes
 
