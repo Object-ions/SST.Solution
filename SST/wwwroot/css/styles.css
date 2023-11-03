@@ -71,6 +71,25 @@ ol, ul {
   margin: 0;
 }
 
+.siblings {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.siblings li {
+  text-align: left;
+  width: 250px;
+}
+
+.siblings input {
+  font-size: 8px;
+  width: 80px;
+  padding: 2px;
+}
+
 .main-container {
   width: 400px;
   margin: 0 auto;
