@@ -11,8 +11,8 @@ using SST.Models;
 namespace SST.Migrations
 {
     [DbContext(typeof(SSTContext))]
-    [Migration("20231029030610_Initializing")]
-    partial class Initializing
+    [Migration("20240110022531_InitNewMigrationsWithServerDatabase")]
+    partial class InitNewMigrationsWithServerDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
